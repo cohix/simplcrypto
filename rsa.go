@@ -187,6 +187,19 @@ func (kp *KeyPair) PubKeyJSON() []byte {
 	return json
 }
 
+// SerializablePubKey exports the KeyPair's pubKey to serializablePubKey
+func (kp *KeyPair) SerializablePubKey() *SerializablePubKey {
+	base64N := Base64URLEncode(kp.Public.N.Bytes())
+
+	serializable := &SerializablePubKey{
+		N:   base64N,
+		E:   int64(kp.Public.E),
+		KID: kp.KID,
+	}
+
+	return serializable
+}
+
 // serializablePubKey is defined in keypair.pb.go
 func (spk *SerializablePubKey) deserialize() (*rsa.PublicKey, error) {
 	realN := &big.Int{}
