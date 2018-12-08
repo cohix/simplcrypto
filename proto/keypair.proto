@@ -3,7 +3,7 @@ syntax = "proto3";
 package simpl.crypto;
 option go_package = "github.com/cohix/simplcrypto";
 
-message serializablePubKey {
+message SerializablePubKey {
 	string N = 1;
 	int64 E = 2;
 	string KID = 3;
