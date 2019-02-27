@@ -12,6 +12,19 @@ Plaintext `[]byte`s are encrypted by a `SymKey` or `KeyPair` into a `Message` st
 
 `KeyPair` public keys can be converted to `SerializablePubKey` in order to be serialized into JSON or Protobuf. `SymKeys` can be serialized to JSON as-is.
 
+### Install
+
+To install, use `go get`, `gvt` or `dep`:
+```
+go get github.com/cohix/simplcrypto
+```
+```
+gvt fetch github.com/cohix/simplcrypto
+```
+```
+dep ensure --add github.com/cohix/simplcrypto
+```
+
 ### Examples
 
 Asymmetric encryption example:
