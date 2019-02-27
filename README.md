@@ -4,11 +4,13 @@ This library aims to add a friendlier abstraction to the Go `crypto` package.
 
 Currently, it supports AES-256 GCM symmetric key encryption, RSA-OEAP asymmetric encryption, and RSA PKCS1v15 Digital Signatures. It also includes some helper functions for base64 operations.
 
-Plaintext `[]byte`s are encrypted by a SymKey or KeyPair into a `Message` struct, which includes the ciphertext and some metadata. Message structs can be serialized to JSON or Protobuf.
+`KeyPair`s can contain a public key portion, or the public and private portions of the RSA key.
 
-`[]byte`s can also be signed by a KeyPair that has a private key, creating a `Signature` struct. `Siguature`s can be verified by a KeyPair with a public key Signatures can be serialized to JSON or Protobuf.
+Plaintext `[]byte`s are encrypted by a `SymKey` or `KeyPair` into a `Message` struct, which includes the ciphertext and some metadata. Message structs can be serialized to JSON or Protobuf.
 
-KeyPair public keys can be converted to `SerializablePubKey` in order to be serialized into JSON or Protobuf. SymKeys can be serialized to JSON as-is.
+`[]byte`s can also be signed by a `KeyPair` that has a private key portion, creating a `Signature` struct. `Siguature`s can be verified by a `KeyPair` so long as they contain the public key portion. Signatures can be serialized to JSON or Protobuf.
+
+`KeyPair` public keys can be converted to `SerializablePubKey` in order to be serialized into JSON or Protobuf. `SymKeys` can be serialized to JSON as-is.
 
 ### Examples
 
