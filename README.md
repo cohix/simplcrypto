@@ -74,3 +74,5 @@ if err := keypair.Verify(data, signature); err != nil {
 
 fmt.Println("verified!")
 ```
+
+This library is provided free of charge for use in any project, personal or professional. The maintainers of this library shall assume no liability for its use under any circumstance. By using this library, you agree to these terms.
