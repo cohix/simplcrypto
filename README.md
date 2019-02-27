@@ -6,7 +6,9 @@ Currently, it supports AES-256 GCM symmetric key encryption, RSA-OEAP asymmetric
 
 Plaintext `[]byte`s are encrypted by a SymKey or KeyPair into a `Message` struct, which includes the ciphertext and some metadata. Message structs can be serialized to JSON or Protobuf.
 
-`[]byte`s can also be signed by a KeyPair that has a private key, creating a `Signature` struct. `Siguature`s can be verified by a KeyPair with a public key.
+`[]byte`s can also be signed by a KeyPair that has a private key, creating a `Signature` struct. `Siguature`s can be verified by a KeyPair with a public key Signatures can be serialized to JSON or Protobuf.
+
+KeyPair public keys can be converted to `SerializablePubKey` in order to be serialized into JSON or Protobuf. SymKeys can be serialized to JSON as-is.
 
 ### Examples
 
